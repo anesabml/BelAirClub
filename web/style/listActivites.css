@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#pageTitle {
+    font-size: 25px;
+    color: white;
+    background-color: #4CAF50;
+    padding: 15px;
+    width: 100%;
+    box-shadow: 1px 0 1px grey;
+}
+
+#activite {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    margin: auto;
+    border-collapse: collapse;
+    width: 95%;
+}
+
+#activite td, #activite th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#activite tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#activite tr:hover {
+    background-color: #ddd;
+}
+
+#activite th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.action {
+    width: 5%;
+}
+
+#removeButton {
+    background-color: #ff0a00; /* Red */
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+#modifyButton {
+    background-color: #0090af; /* Light blue */
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+#addButton {
+    position:relative;
+    left: 85%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    justify-content: end;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 16px;
+}

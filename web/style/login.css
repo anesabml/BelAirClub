@@ -1,0 +1,88 @@
+body {
+    font-style: initial;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: rgb(231, 230, 229);
+
+}
+
+form {
+    background-color: #fff;
+    border: none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-right: 2%;
+    padding-left: 2%;
+    width: auto;
+    height: auto;
+    box-shadow: 1px 1px 8px 3px grey;
+}
+
+fieldset {
+    border: none;
+    font-family: Californian FB;
+
+}
+
+fieldset legend {
+
+    padding-top: 15%;
+    font-family: Cambria Math;
+    font-size: 30px;
+}
+
+input {
+    border-radius: 2px;
+    background-color: white;
+
+    border: none;
+
+}
+
+input {
+    border-radius: 3%;
+
+}
+
+.pclass {
+    padding: 2px;
+}
+input[type=email],input[type=text], input[type=password] {
+    border: 1px solid grey;
+    margin: 5px;
+    width: 90%;
+    height: 20px;
+    padding: 7px;
+
+}
+input[type=email]:focus,
+input[type=text]:focus,
+input[type=password]:focus {
+    box-shadow: 1px 1px 8px 3px grey;
+    padding: 2px;
+    width: 90%;
+    height: 20px;
+    padding: 7px;
+
+}
+
+input[type=submit] {
+    width: 50%;
+    padding: 3%;
+    margin-top: 2%;
+    font-size: 17px;
+    background-color: rgb(0, 193, 70);
+    font-size: 18px;
+    font-family: Comic Sans MS;
+
+}
+
+input[type=submit]:hover {
+    background-color: rgb(0, 210, 70);
+    box-shadow: 1px 1px 2px 2px grey;
+
+}
