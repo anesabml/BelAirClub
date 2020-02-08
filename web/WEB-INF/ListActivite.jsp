@@ -11,7 +11,7 @@
 <head>
     <title>List des activites</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style\listActivites.css">
+    <link rel="stylesheet" type="text/css" href="style\table.css">
 </head>
 <body>
 <div class="header">

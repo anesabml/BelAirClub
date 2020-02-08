@@ -8,8 +8,15 @@
     padding: 20px;
     width: 100%;
     color: white;
+    margin-bottom: 30px;
     text-align: center;
     font-size: 25px;
+}
+
+#activiteInfo {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    margin: auto;
+    width: 95%;
 }
 
 #activite {

@@ -9,49 +9,40 @@
 
 <html>
 <head>
-    <title>AfficherActivite </title>
+    <title>Activites</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style\tableStyle.css">
+    <link rel="stylesheet" type="text/css" href="style\table.css">
 </head>
 <body>
-<p class="titlepage">noter Activite</p>
-<c:forEach var="list" items="${requestScope.activite}">
-    <div>
-        <table>
-            <tr>
-                <td>nom d'activite :</td>
-                <td><c:out value="${list.getDesignation()}"></c:out>
-                </td>
-            </tr>
-            <tr>
-                <td>prix par creneaux :</td>
-                <td><c:out value="${list.getPrix()}"></c:out></td>
-            </tr>
-            <tr>
-                <table class="smoltable">
-
-
-                    <tr>
-                        <th>Jour</th>
-                        <th>Heure debut</th>
-                        <th>Heure fin</th>
-                    </tr>
-                    <c:forEach var="creneaux" items="${list.getCreneaux()}">
-                        <tr>
-                            <td><c:out value="${creneaux.getJour()}"></c:out></td>
-                            <td><c:out value="${creneaux.getHeureDebut()}"></c:out></td>
-                            <td><c:out value="${creneaux.getHeureFin()}"></c:out></td>
-                        </tr>
-                    </c:forEach>
-                </table>
-
-            </tr>
-        </table>
-        <a href="ReserverServlet">
-            <button> reserver</button>
-        </a>
+<div class="header">
+    <h2>Notre Activites</h2>
+</div>
+<div>
+    <c:forEach var="list" items="${requestScope.activite}">
+    <div id="activiteInfo">
+        <p>Nom:</p>
+        <p><c:out value="${list.getDesignation()}"></c:out></p>
+        <p>Prix / Creneaux:</p>
+        <p><c:out value="${list.getPrix()}"></c:out></p>
     </div>
+    <table id="activite">
+        <tr>
+            <th>Jour</th>
+            <th>Heure debut</th>
+            <th>Heure fin</th>
+        </tr>
+        <c:forEach var="creneaux" items="${list.getCreneaux()}">
+            <tr>
+                <td><c:out value="${creneaux.getJour()}"></c:out></td>
+                <td><c:out value="${creneaux.getHeureDebut()}"></c:out></td>
+                <td><c:out value="${creneaux.getHeureFin()}"></c:out></td>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
+<a id="addButton" href="ReserverServlet">
+    Reserver
+</a>
 </c:forEach>
-
 </body>
 </html>

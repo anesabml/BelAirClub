@@ -8,63 +8,56 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>activite libre</title>
-
-    <link rel="stylesheet" href="style\tableStyle.css">
+    <title>Activites libre</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style\table.css">
 </head>
 <body>
-<p class="titlepage">noter Activite</p>
+<div class="header">
+    <h2>Activites libre</h2>
+</div>
 <c:if test="${requestScope.get(\"activiteLibre\")==null}">
-    <p>no creneaux libre </p>
+    <p>Pas de creneaux libre</p>
 </c:if>
-<c:forEach var="list" items="${requestScope.activiteLibre}">
-    <div>
-        <table>
-            <tr>
-                <td>nom d'activite :</td>
-                <td><c:out value="${list.getDesignation()}"></c:out>
-                </td>
-            </tr>
-            <tr>
-                <td>prix par creneaux :</td>
-                <td><c:out value="${list.getPrix()}"></c:out></td>
-            </tr>
-            <tr>
-                <table class="smoltable">
+<div>
 
-
-                    <tr>
-                        <th>jour</th>
-                        <th>Heure debut</th>
-                        <th>Heure fin</th>
-                        <th>nombre de place reste</th>
-                    </tr>
-                    <c:forEach var="creneaux" items="${list.getCreneaux()}">
-                        <tr>
-                            <td><c:out value="${creneaux.getJour()}"></c:out></td>
-                            <td><c:out value="${creneaux.getHeureDebut()}"></c:out></td>
-                            <td><c:out value="${creneaux.getHeureFin()}"></c:out></td>
-                            <c:choose><c:when test="${creneaux.getNbPlace()>0}">
-                                <td><c:out value="${creneaux.getNbPlace()}"></c:out></td>
-                            </c:when>
-                            <c:otherwise>
-                                <td>list d'attend</td>
-                            </c:otherwise>
-                            </c:choose>
-
-                        </tr>
-
-                    </c:forEach>
-                </table>
-
-            </tr>
-        </table>
-        <a href="ReserverServlet">
-            <button> reserver</button>
-        </a>
+    <c:forEach var="list" items="${requestScope.activiteLibre}">
+    <div id="activiteInfo">
+        <p>Nom:</p>
+        <p><c:out value="${list.getDesignation()}"></c:out></p>
+        <p>Prix / Creneaux:</p>
+        <p><c:out value="${list.getPrix()}"></c:out></p>
     </div>
-</c:forEach>
+    <table id="activite">
 
+
+        <tr>
+            <th>Jour</th>
+            <th>Heure debut</th>
+            <th>Heure fin</th>
+            <th>nombre de place reste</th>
+        </tr>
+        <c:forEach var="creneaux" items="${list.getCreneaux()}">
+            <tr>
+                <td><c:out value="${creneaux.getJour()}"></c:out></td>
+                <td><c:out value="${creneaux.getHeureDebut()}"></c:out></td>
+                <td><c:out value="${creneaux.getHeureFin()}"></c:out></td>
+                <c:choose><c:when test="${creneaux.getNbPlace()>0}">
+                    <td><c:out value="${creneaux.getNbPlace()}"></c:out></td>
+                </c:when>
+                    <c:otherwise>
+                        <td>list d'attend</td>
+                    </c:otherwise>
+                </c:choose>
+
+            </tr>
+
+        </c:forEach>
+    </table>
+</div>
+<a id="addButton" href="ReserverServlet">
+    Reserver
+</a>
+</c:forEach>
 </body>
 </html>

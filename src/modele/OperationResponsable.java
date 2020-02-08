@@ -173,15 +173,12 @@ public class OperationResponsable {
     }
 
     public int[] getAllLoginsByMonth() throws SQLException {
-        String sql = "SELECT DATE_FORMAT(date_inscription, '%m'), count(*) FROM membre GROUP BY DATE_FORMAT(date_inscription, '%m');";
+        String sql = "SELECT DATE_FORMAT(dateInsecription, '%m'), count(*) FROM membre GROUP BY DATE_FORMAT(dateInsecription, '%m');";
         ResultSet resultSet = connection.getStatement().executeQuery(sql);
 
         int[] loginsCount = new int[12];
 
         Arrays.fill(loginsCount, 0);
-
-        loginsCount[0] = 12;
-        loginsCount[11] = 14;
 
         while (resultSet.next()) {
             int month = resultSet.getInt(1);
