@@ -188,12 +188,12 @@
         <url-pattern>/annulerReservationServlet</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>ComfirmeReservatiomServlet</servlet-name>
-        <servlet-class>control.membre.ComfirmeReservatiomServlet</servlet-class>
+        <servlet-name>ComfirmeReservationServlet</servlet-name>
+        <servlet-class>control.membre.ComfirmeReservationServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ComfirmeReservatiomServlet</servlet-name>
-        <url-pattern>/ComfirmeReservatiomServlet</url-pattern>
+        <servlet-name>ComfirmeReservationServlet</servlet-name>
+        <url-pattern>/ComfirmeReservationServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>LogoutMembreServlet</servlet-name>

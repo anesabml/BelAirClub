@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class OperationVisiteur {
     public boolean adherer(Membre m) throws SQLException {
         BdConnection con = new BdConnection();
-        String sql = "INSERT INTO membre (nom, prenom,date_nais,adres,dateInsecription,email,password,photo,docRes,photoidenti) select '"
+        String sql = "INSERT INTO membre (nom, prenom,date_nai,adress,dateInsecription,email,password,photo,docRes,photoidenti) select '"
                 + m.getNom()
                 + "','" + m.getPrenom()
                 + "','" + m.getDateN()

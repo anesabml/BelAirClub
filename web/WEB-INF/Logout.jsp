@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>entre omnisport bel Air</title>
+    <title>centre omnisport bel Air</title>
 </head>
 <body>
 <h1>

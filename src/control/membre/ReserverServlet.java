@@ -64,12 +64,14 @@ public class ReserverServlet extends HttpServlet {
             PrintWriter out=response.getWriter();
             if (r==0)
                 out.print("tu deja reserver");
-            else
-                out.print(codeReservation);
+            else{
+                request.setAttribute("code",codeReservation);
+                dispatcher=request.getRequestDispatcher("WEB-INF/AfficheCodeReservation.jsp");
+                dispatcher.forward(request,response);
         }
 
 
-    }
+    }}
     public String getCurrentDate()
     {
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");

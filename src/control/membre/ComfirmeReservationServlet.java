@@ -15,8 +15,8 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebServlet(name = "ComfirmeReservatiomServlet")
-public class ComfirmeReservatiomServlet extends HttpServlet {
+@WebServlet(name = "ComfirmeReservationServlet")
+public class ComfirmeReservationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -49,7 +49,8 @@ public class ComfirmeReservatiomServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            out.print("reservation est annuler");
+            dispatcher=request.getRequestDispatcher("WEB-INF/EspaceMembre.jsp");
+            dispatcher.forward(request,response);
         }else{
             out.print("code incorect");
         }

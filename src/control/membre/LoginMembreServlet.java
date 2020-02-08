@@ -27,35 +27,34 @@ public class LoginMembreServlet extends HttpServlet {
         String email = request.getParameter("email");
         String passWord = request.getParameter("password");
         if (session != null) {
-            try {
+
                 Membre membre = (Membre) session.getAttribute("membre");
+                if(membre!=null){
+
                 dispatcher = request.getRequestDispatcher("/WEB-INF/EspaceMembre.jsp");
                 dispatcher.forward(request, response);
-            } catch (Exception e) {
-                if (email == null) {
-                    dispatcher = request.getRequestDispatcher("/WEB-INF/LoginMembre.html");
-                    dispatcher.forward(request, response);
-                } else {
-                    try {
-                        login(request, response, email, passWord);
-                    } catch (SQLException e1) {
-                        e1.printStackTrace();
-                    }
-                }
-            }
-        } else {
-            if (email == null) {
-                dispatcher = request.getRequestDispatcher("/WEB-INF/LoginMembre.html");
-                dispatcher.forward(request, response);
             } else {
-                try {
-                    login(request, response, email, passWord);
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
+                    session.invalidate();
+                    testEmailExist(request, response, email, passWord);
                 }
+        } else {
+            testEmailExist(request, response, email, passWord);
+
+
+        }
+    }
+
+    private void testEmailExist(HttpServletRequest request, HttpServletResponse response, String email, String passWord) throws ServletException, IOException {
+        RequestDispatcher dispatcher;
+        if (email == null) {
+            dispatcher = request.getRequestDispatcher("/WEB-INF/LoginMembre.html");
+            dispatcher.forward(request, response);
+        } else {
+            try {
+                login(request, response, email, passWord);
+            } catch (SQLException e1) {
+                e1.printStackTrace();
             }
-
-
         }
     }
 

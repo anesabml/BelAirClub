@@ -17,8 +17,8 @@ public class OperationMembre {
             membre.setPrenom(resultSet.getString("prenom"));
             membre.setEmail(email);
             membre.setPassWord(password);
-            membre.setAdress(resultSet.getString("adres"));
-            membre.setDateN(resultSet.getDate("date_nais").toString());
+            membre.setAdress(resultSet.getString("adress"));
+            membre.setDateN(resultSet.getDate("date_nai").toString());
             membre.setCompteloque(resultSet.getBoolean("comtebloque"));
             membre.setPhoto(resultSet.getString("photo"));
             membre.setDocRes(resultSet.getString("docRes"));

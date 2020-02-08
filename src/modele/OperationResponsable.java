@@ -37,6 +37,7 @@ public class OperationResponsable {
                 }
             }
         }
+
         return membres;
     }
 
@@ -64,7 +65,7 @@ public class OperationResponsable {
     }
 
     public void deleteActivity(int id) throws SQLException {
-        String sql = String.format("DELETE FROM activite WHERE id = %d;", id);
+        String sql = String.format("DELETE FROM activite WHERE id = %d", id);
         connection.getStatement().executeUpdate(sql);
     }
 

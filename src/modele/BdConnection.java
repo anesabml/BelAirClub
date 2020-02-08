@@ -6,8 +6,8 @@ import java.sql.Statement;
 
 public class BdConnection {
     private final String url = "jdbc:mysql://localhost:3306/belairclub?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
-    private final String user = "anesabml";
-    private final String password = "anesabml";
+    private final String user = "root";
+    private final String password = "bahmed";
     private Connection connection = null;
     private Statement statement;
 

@@ -9,7 +9,7 @@
 
 <html>
 <head>
-    <title>Modifer Activite</title>
+    <title>centre omnisport bel Air</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style\modifierActivity.css">
 </head>

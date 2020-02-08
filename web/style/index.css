@@ -1,65 +1,55 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
+*{
+	margin: 0;
+	padding: 0;
 }
-
-body {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+.divImag {
+	position: relative;
+	width: 25%;
+	height: 50%;
+	float: left;
+	border: 1px solid grey;
+	margin-left: 6.2%;
+	margin-top: 0px;
 }
+img{
 
-/* Style the header */
+	width: 70%;
+	height: 90%;
+	transform: translate(-50%,-50%);
+	margin-top: 50%;
+	margin-left: 50%;
+	padding: 0px;
+}
+.text{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    background-color: #4CAF50;
+    color: white;
+ 	text-align: center;
+	margin-top: -20%;
+    padding:5%;
+
+}
+	
+a:link{
+	text-decoration: none
+}
 .header {
     background-color: #4CAF50;
     padding: 20px;
     color: white;
     text-align: center;
     font-size: 25px;
-    margin-bottom: 100px;
+     margin-right: 0;
+    width: 100%;
+    margin-bottom: 2%;
 }
+.welcome{
+    /*font-family: "Bradley Hand ITC",bold;*/
 
-/* Container for flexboxes */
-.bodyContainer {
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Container for flexboxes */
-.rowContainer {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-}
-
-/* Create three equal columns that sits next to each other */
-.row {
-    background-color: #0090af;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    padding: 15px;
-    margin: 10px;
-}
-
-.row:hover {
-    background-color: dimgray;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-img {
-    height: 200px;
-    width: 200px;
-    margin-left: 50px;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-    .bodyContainer {
-        -webkit-flex-direction: column;
-        flex-direction: column;
-    }
+    color: black;
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+    padding: 2%;
+    margin-bottom: 2%;
 }

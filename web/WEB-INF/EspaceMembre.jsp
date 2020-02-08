@@ -15,7 +15,8 @@
     <h2>Espace Membre</h2>
 </div>
 <div class="rowContainer">
-    <div class="row"><img src=${sessionScope.photo}></div>
+    <div class="imagestyle"><img src=${sessionScope.photo}></div>
+    <c:out value="${sessionScope.membre.getNom()}"></c:out>
     <div class="row"><a href="ConsulterServlet">Notre activites</a></div>
     <div class="row"><a href="CreneauxLibreServlet">Les créneaux libre</a></div>
     <div class="row"><a href="ReservationMembreServlet">Liste de réservation</a></div>

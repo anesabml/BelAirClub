@@ -8,22 +8,55 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>centre omnisport bel Air</title>
+    <link rel="stylesheet" type="text/css" href="style\annulerComfimeSyle.css">
+
 </head>
 <body>
+<div>
 <form action="ComfirmeReservatiomServlet" method="post">
+    <legend>Comfirme Reservation</legend>
+    <jsp:useBean id="reservation" class="modele.CollectionARC" scope="request"></jsp:useBean>
     <fieldset>
-        <jsp:useBean id="reservation" class="Modele.CollectionARC" scope="request"></jsp:useBean>
-        <p><%out.print(reservation.getActivite().getDesignation());%></p>
-        <p><% out.print(reservation.getActivite().getPrix());%></p>
-        <p><%out.print(reservation.getReservation().getDate());%></p>
-        <p><%out.print(reservation.getCreneaux().getJour());%></p>
-        <p><%out.print(reservation.getCreneaux().getHeure());%></p>
-        <p>code : <input name="code" type="text"></p>
+        <table>
+            <tr>
+                <td>
+                    nom d'activite :
+                </td>
+                <td><%out.print(reservation.getActivite().getDesignation());%></td>
+            </tr>
+            <tr>
+                <td>prix :</td>
+                <td><%out.print(reservation.getActivite().getPrix());%></td>
+            </tr>
+            <tr>
+                <td>date de reservation :</td>
+                <td><%out.print(reservation.getReservation().getDate());%></td>
+            </tr>
+            <tr>
+                <td>jour de jouer :</td>
+                <td><%out.print(reservation.getCreneaux().getJour());%></td>
+            </tr>
+            <tr>
+                <td>heure de debut :</td>
+                <td><%out.print(reservation.getCreneaux().getHeureDebut());%></td>
+            </tr>
+            <tr>
+                <td>heure de fin :</td>
+                <td><%out.print(reservation.getCreneaux().getHeureFin());%></td>
+            </tr>
+            <tr>
+                <td>code :</td>
+                <td><input name="code" type="text"></td>
+            </tr>
+        </table>
         <input type="submit">
 
     </fieldset>
 </form>
-<a href="LoginMembreServlet"><button>retourn</button></a>
+<a href="LoginMembreServlet">
+    <button>retourn</button>
+</a>
+</div>
 </body>
 </html>

@@ -9,7 +9,7 @@
 
 <html>
 <head>
-    <title>Ajouter Activite</title>
+    <title>centre omnisport bel Aire</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style\modifierActivity.css">
 </head>

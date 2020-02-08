@@ -57,7 +57,8 @@ public class annulerReservationServlet extends HttpServlet {
             } catch (MessagingException e) {
                 e.printStackTrace();
             }
-            out.print("reservation est annuler");
+            dispatcher=request.getRequestDispatcher("WEB-INF/EspaceMembre.jsp");
+            dispatcher.forward(request,response);
 
         }else{
             out.print("code incorect");
