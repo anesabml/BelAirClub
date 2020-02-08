@@ -9,9 +9,16 @@
 <form method="POST" action="LoginMembreServlet">
     <fieldset>
         <legend>Login Membre</legend>
-        <p class="pclass"> Nom de utilisateur : </p><input type="email" name="email" required>
-        <p class="pclass"> Mot de pass : </p><input type="password" name="password" required>
-        <p><input type="submit" name="submit" value="enter"></p>
+
+        <!-- Email --->
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
+
+        <!-- Password --->
+        <label for="password">Mot de pass:</label>
+        <input id="password" type="password" name="password" required>
+
+        <input type="submit" name="submit" value="enter">
     </fieldset>
 </form>
 </body>

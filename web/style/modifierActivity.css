@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 20px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
 input {
     width: 100%;
     padding: 12px 20px;
@@ -27,4 +33,8 @@ input[type=submit]:hover {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+}
+
+#crenauxInputs {
+    margin-top: 20px;
 }

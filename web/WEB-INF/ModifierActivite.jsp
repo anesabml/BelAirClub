@@ -15,36 +15,33 @@
 </head>
 <body>
 <form method="POST" action="ModifierActiviteServlet?id=${sessionScope.activite.getCode()}">
-    <fieldset>
-        <legend>Activite</legend>
 
-        <%-- Designation --%>
-        <p class="pclass">Designation : </p>
-        <input type="text" name="designation" value="${sessionScope.activite.getDesignation()}" required>
+    <%-- Designation --%>
+    <label for="designation">Designation:</label>
+    <input id="designation" type="text" name="designation" value="${sessionScope.activite.getDesignation()}" required>
 
-        <%-- Prix --%>
-        <p class="pclass">Prix : </p>
-        <input type="number" name="prix" value="${sessionScope.activite.getPrix()}" required>
+    <%-- Prix --%>
+    <label for="prix">Prix:</label>
+    <input id="prix" type="number" name="prix" value="${sessionScope.activite.getPrix()}" required>
 
-        <%-- Crenaux --%>
-        <div>
-            <p class="pclass">Creneaux : </p>
-            <c:forEach var="creneaux" items="${sessionScope.activite.getCreneaux()}">
-                <p class="pclass">Jour: </p>
-                <input type="number" name="jour[]" value="${creneaux.getJour()}" required>
+    <%-- Crenaux --%>
+    <label>Crenaux:</label>
+    <div id="crenauxInputs">
+        <c:forEach var="creneaux" items="${sessionScope.activite.getCreneaux()}">
+            <label for="jour">Jour:</label>
+            <input id="jour" type="number" name="jour[]" value="${creneaux.getJour()}" required>
 
-                <p class="pclass">Heure de Debut:</p>
-                <input type="number" name="debut[]" value="${creneaux.getHeureDebut()}" required>
+            <label for="debut">Hour debut:</label>
+            <input id="debut" type="number" name="debut[]" value="${creneaux.getHeureDebut()}" required>
 
-                <p class="pclass">Heure de fin:</p>
-                <input type="number" name="fin[]" value="${creneaux.getHeureFin()}" required>
+            <label for="fin">Heure fin:</label>
+            <input id="fin" type="number" name="fin[]" value="${creneaux.getHeureFin()}" required>
 
-                <p class="pclass">Nomber de places:</p>
-                <input type="number" name="places[]" value="${creneaux.getNbPlace()}" required>
-            </c:forEach>
-        </div>
-        <p><input type="submit" name="submit" value="Save"></p>
-    </fieldset>
+            <label for="places">Nomber de places:</label>
+            <input id="places" type="number" name="places[]" value="${creneaux.getNbPlace()}" required>
+        </c:forEach>
+    </div>
+    <input type="submit" name="submit" value="Save">
 </form>
 </body>
 </html>

@@ -13,36 +13,28 @@ public class OperationResponsable {
     public ArrayList<Membre> exportListMemberWith3Cancelation() throws SQLException {
 
         // Get all the members who canceled more then 3 times
-        String sql = "SELECT COUNT(*), id_membre FROM reservation WHERE annuler = 1 GROUP BY id_membre;";
-
+        String sql = "SELECT * FROM membre WHERE membre.id IN (SELECT id_membre FROM reservation WHERE (SELECT SUM(annuler = true) FROM reservation WHERE reservation.id_membre = membre.id) >=3);";
         ResultSet resultSet = connection.getStatement().executeQuery(sql);
-        ArrayList<Membre> membres = new ArrayList<Membre>();
+
+        ArrayList<Membre> membres = new ArrayList<>();
         while (resultSet.next()) {
-            int count = resultSet.getInt(1);
-            if (count >= 3) {
-                int id = resultSet.getInt(2);
-                String memberQuerySql = String.format("SELECT * FROM membre WHERE id = %d;", id);
-                ResultSet memberResultSet = connection.getStatement().executeQuery(memberQuerySql);
+            Membre membre = new Membre();
 
-                while (memberResultSet.next()) {
-                    Membre membre = new Membre();
-                    membre.setId(memberResultSet.getInt("id"));
-                    membre.setNom(memberResultSet.getString("nom"));
-                    membre.setPrenom(memberResultSet.getString("prenom"));
-                    membre.setEmail(memberResultSet.getString("email"));
-                    membre.setDateN(memberResultSet.getString("date_nai"));
-                    membre.setAdress(memberResultSet.getString("adress"));
+            membre.setId(resultSet.getInt("id"));
+            membre.setNom(resultSet.getString("nom"));
+            membre.setPrenom(resultSet.getString("prenom"));
+            membre.setEmail(resultSet.getString("email"));
+            membre.setDateN(resultSet.getString("date_nais"));
+            membre.setAdress(resultSet.getString("adres"));
 
-                    membres.add(membre);
-                }
-            }
+            membres.add(membre);
         }
         return membres;
     }
 
 
     public ArrayList<Activite> getActivites() throws SQLException {
-        String sql = "select * from activite a;";
+        String sql = "SELECT * FROM activite a;";
         ResultSet resultSet = connection.getStatement().executeQuery(sql);
 
 
