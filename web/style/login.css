@@ -19,20 +19,10 @@ form {
 
 fieldset {
     border: none;
-    font-family: Californian FB;
-
 }
 
 fieldset legend {
-
-    padding-top: 15%;
-    font-family: Cambria Math;
     font-size: 30px;
-}
-
-
-.pclass {
-    padding: 2px;
 }
 
 input[type=email], input[type=text], input[type=password] {

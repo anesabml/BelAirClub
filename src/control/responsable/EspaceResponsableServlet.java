@@ -12,10 +12,11 @@ import java.io.IOException;
 @WebServlet(name = "EspaceResponsableServlet", urlPatterns = "/EspaceResponsableServlet")
 public class EspaceResponsableServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher;
         HttpSession session = request.getSession(false);
 
-        if ((session == null) || (session.getAttribute("user") == null)) {
+        RequestDispatcher dispatcher;
+
+        if (session == null || session.getAttribute("user") == null) {
 
             dispatcher = request.getRequestDispatcher("/AtentifResposable.html");
             dispatcher.forward(request, response);

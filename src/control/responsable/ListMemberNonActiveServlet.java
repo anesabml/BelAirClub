@@ -41,9 +41,7 @@ public class ListMemberNonActiveServlet extends HttpServlet {
 
             OutputStream outputStream = resp.getOutputStream();
             workbook.write(outputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (IOException | SQLException e) {
             e.printStackTrace();
         } finally {
             workbook.close();
@@ -82,7 +80,7 @@ public class ListMemberNonActiveServlet extends HttpServlet {
             Row row = sheet.createRow(rowCount++);
 
             int columnCount = 0;
-            Cell cell = row.createCell(columnCount);
+            Cell cell = row.createCell(columnCount++);
             cell.setCellValue(membre.getId());
 
             cell = row.createCell(columnCount++);

@@ -7,7 +7,7 @@
     <!-- [START] LoginResponsableServlet -->
     <servlet>
         <servlet-name>LoginResponsableServlet</servlet-name>
-        <servlet-class>control.LoginResponsableServlet</servlet-class>
+        <servlet-class>control.responsable.LoginResponsableServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginResponsableServlet</servlet-name>
