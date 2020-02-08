@@ -16,7 +16,7 @@ public class OperationResponsable {
         String sql = "SELECT * FROM membre WHERE membre.id IN (SELECT id_membre FROM reservation WHERE (SELECT SUM(annuler = true) FROM reservation WHERE reservation.id_membre = membre.id) >=3);";
         ResultSet resultSet = connection.getStatement().executeQuery(sql);
 
-        ArrayList<Membre> membres = new ArrayList<>();
+        ArrayList<Membre> membres = new ArrayList<Membre>();
         while (resultSet.next()) {
             Membre membre = new Membre();
 
