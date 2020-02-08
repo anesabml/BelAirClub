@@ -160,9 +160,6 @@ public class OperationResponsable {
 
         Arrays.fill(reservationsCount, 0);
 
-//        reservationsCount[0] = 12;
-//        reservationsCount[3] = 14;
-
         while (resultSet.next()) {
             int month = resultSet.getInt(1);
             int count = resultSet.getInt(2);
