@@ -39,9 +39,9 @@ public class OperationMembre {
         String sql = "INSERT INTO reservation(code,date_res,confirme,annuler,enattend,id_membre,id_creneau)select '" +
                 reservation.getCode() +
                 "','" + reservation.getDate() +
-                "'," + reservation.isComfirme() +
-                "," + reservation.isAnnule() +
-                "," + reservation.isAttend() +
+                "'," + reservation.isConfirme() +
+                "," + reservation.isAnnuler() +
+                "," + reservation.isEnAttend() +
                 "," + reservation.getIdMembre() +
                 "," + reservation.getIdCreneau() + " from dual where not exists (select * from reservation where id_membre="
                 + reservation.getIdMembre() + " and id_creneau=" + reservation.getIdCreneau() + " and annuler=false )";
@@ -63,8 +63,8 @@ public class OperationMembre {
             reservation.setId(resultSet.getInt("id_res"));
             reservation.setCode(resultSet.getString("code"));
             reservation.setDate(resultSet.getString("date_res"));
-            reservation.setComfirme(resultSet.getBoolean("confirme"));
-            reservation.setAttend(resultSet.getBoolean("enattend"));
+            reservation.setConfirme(resultSet.getBoolean("confirme"));
+            reservation.setEnAttend(resultSet.getBoolean("enattend"));
             reservation.setIdMembre(membre.getId());
             reservation.setIdCreneau(resultSet.getInt("id_c"));
             Activite activite=new Activite();
@@ -72,7 +72,8 @@ public class OperationMembre {
             activite.setPrix(resultSet.getFloat("prix"));
             Creneaux creneaux=new Creneaux();
             creneaux.setJour(resultSet.getString("jour"));
-            creneaux.setHeure(resultSet.getString("heure"));
+            creneaux.setHeureDebut(resultSet.getString("heureDebut"));
+            creneaux.setHeureFin(resultSet.getString("heureFin"));
             CollectionARC collectionARC=new CollectionARC();
             collectionARC.setActivite(activite);
             collectionARC.setReservation(reservation);
@@ -101,9 +102,10 @@ public class OperationMembre {
             if ((!activites.isEmpty()) && (activites.get(activites.size() - 1).getCode() == id)) {
                 activite = (activites.get(activites.size() - 1));
                 creneaux.setId(rsultate.getInt("id_c"));
-                creneaux.setId_activite(rsultate.getInt("id_activite"));
+                creneaux.setIdActivite(rsultate.getInt("id_activite"));
                 creneaux.setJour(rsultate.getString("jour"));
-                creneaux.setHeure(rsultate.getString("heure"));
+                creneaux.setHeureDebut(rsultate.getString("heureDebut"));
+                creneaux.setHeureFin(rsultate.getString("heureFin"));
                 creneaux.setNbPlace(rsultate.getInt("nbplace")-rsultate.getInt("A"));
                 activite.getCreneaux().add(creneaux);
 
@@ -114,9 +116,10 @@ public class OperationMembre {
                 activite.setPrix(rsultate.getFloat("prix"));
                 creneaux.setId(rsultate.getInt("id_c"));
                 creneaux.setJour(rsultate.getString("jour"));
-                creneaux.setHeure(rsultate.getString("heure"));
+                creneaux.setHeureDebut(rsultate.getString("heureDebut"));
+                creneaux.setHeureFin(rsultate.getString("heureFin"));
                 creneaux.setNbPlace(rsultate.getInt("nbplace")-rsultate.getInt("A"));
-                creneaux.setId_activite(rsultate.getInt("id_activite"));
+                creneaux.setIdActivite(rsultate.getInt("id_activite"));
                 activite.getCreneaux().add(creneaux);
                 activites.add(activite);
             }

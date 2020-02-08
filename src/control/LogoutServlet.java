@@ -20,7 +20,6 @@ public class LogoutServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
 //       String user=(String) session.getAttribute("user");
         if ((session == null) || (session.getAttribute("user") == null)) {
-            System.out.println("AtentifResposable.html");
             dispatcher = request.getRequestDispatcher("AtentifResposable.html");
             dispatcher.forward(request, response);
         } else {

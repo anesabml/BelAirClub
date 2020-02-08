@@ -55,9 +55,10 @@ public class OperationVisiteur {
             if ((!activites.isEmpty()) && (activites.get(activites.size() - 1).getCode() == id)) {
                 activite = (activites.get(activites.size() - 1));
                 creneaux.setId(rsultate.getInt("id_c"));
-                creneaux.setId_activite(rsultate.getInt("id_activite"));
+                creneaux.setIdActivite(rsultate.getInt("id_activite"));
                 creneaux.setJour(rsultate.getString("jour"));
-                creneaux.setHeure(rsultate.getString("heure"));
+                creneaux.setHeureDebut(rsultate.getString("heureDebut"));
+                creneaux.setHeureFin(rsultate.getString("heureFin"));
                 activite.getCreneaux().add(creneaux);
 
 
@@ -67,8 +68,9 @@ public class OperationVisiteur {
                 activite.setPrix(rsultate.getFloat("prix"));
                 creneaux.setId(rsultate.getInt("id_c"));
                 creneaux.setJour(rsultate.getString("jour"));
-                creneaux.setHeure(rsultate.getString("heure"));
-                creneaux.setId_activite(rsultate.getInt("id_activite"));
+                creneaux.setHeureDebut(rsultate.getString("heureDebut"));
+                creneaux.setHeureFin(rsultate.getString("heureFin"));
+                creneaux.setIdActivite(rsultate.getInt("id_activite"));
                 activite.getCreneaux().add(creneaux);
                 activites.add(activite);
             }}

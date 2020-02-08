@@ -3,6 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <!-- [START] LoginResponsableServlet -->
     <servlet>
         <servlet-name>LoginResponsableServlet</servlet-name>
         <servlet-class>control.LoginResponsableServlet</servlet-class>
@@ -11,6 +13,9 @@
         <servlet-name>LoginResponsableServlet</servlet-name>
         <url-pattern>/LoginResponsableServlet</url-pattern>
     </servlet-mapping>
+    <!-- [END] LoginResponsableServlet -->
+
+    <!-- [START] ConsulterServlet -->
     <servlet>
         <servlet-name>ConsulterServlet</servlet-name>
         <servlet-class>control.ConsulterServlet</servlet-class>
@@ -19,6 +24,9 @@
         <servlet-name>ConsulterServlet</servlet-name>
         <url-pattern>/ConsulterServlet</url-pattern>
     </servlet-mapping>
+    <!-- [END] ConsulterServlet -->
+
+    <!-- [START] LoginMembreServlet -->
     <servlet>
         <servlet-name>LoginMembreServlet</servlet-name>
         <servlet-class>control.membre.LoginMembreServlet</servlet-class>
@@ -27,6 +35,9 @@
         <servlet-name>LoginMembreServlet</servlet-name>
         <url-pattern>/LoginMembreServlet</url-pattern>
     </servlet-mapping>
+    <!-- [END] LoginMembreServlet -->
+
+    <!-- [START] LogoutServlet -->
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>control.LogoutServlet</servlet-class>
@@ -35,11 +46,18 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
+    <!-- [END] LogoutServlet -->
 
+    <!-- [START] ServletAdhesion -->
+    <servlet>
+        <servlet-name>ServletAdhesion</servlet-name>
+        <servlet-class>control.ServletAdhesion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletAdhesion</servlet-name>
         <url-pattern>/ServletAdhesion</url-pattern>
     </servlet-mapping>
+    <!-- [END] ServletAdhesion -->
 
     <!-- [START] ListActivityServlet -->
     <servlet>
@@ -50,7 +68,7 @@
         <servlet-name>ListActivityServlet</servlet-name>
         <url-pattern>/ListActivityServlet</url-pattern>
     </servlet-mapping>
-    <!-- [START] ListActivityServlet -->
+    <!-- [END] ListActivityServlet -->
 
     <!-- [START] ModifierActiviteServlet -->
     <servlet>
@@ -61,7 +79,7 @@
         <servlet-name>ModifierActiviteServlet</servlet-name>
         <url-pattern>/ModifierActiviteServlet</url-pattern>
     </servlet-mapping>
-    <!-- [START] ModifierActiviteServlet -->
+    <!-- [END] ModifierActiviteServlet -->
 
     <!-- [START] DeleteActiviteServlet -->
     <servlet>

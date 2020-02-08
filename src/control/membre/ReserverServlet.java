@@ -49,9 +49,9 @@ public class ReserverServlet extends HttpServlet {
             OperationMembre operationMembre=new OperationMembre();
             Creneaux creneaux=operationMembre.getCreneaux(idCreneaux);
             if(creneaux.getNbPlace()<=0)
-            reservation.setAttend(true);
+            reservation.setEnAttend(true);
             else
-                reservation.setAttend(false);
+                reservation.setEnAttend(false);
             String codeReservation=getCode();
             reservation.setCode(codeReservation);
 

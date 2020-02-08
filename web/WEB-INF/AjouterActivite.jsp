@@ -11,7 +11,7 @@
 <head>
     <title>Ajouter Activite</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stayle\modifierActivity.css">
+    <link rel="stylesheet" type="text/css" href="style\modifierActivity.css">
 </head>
 <body>
 <div id="form">
@@ -40,9 +40,9 @@
             <label for="places">Nomber de places</label>
             <input type="number" name="places[]" id="places" required>
         </div>
-        <%--<div>
+        <div>
             <button type="button" onclick="ajouterCrenaux()">Ajouter crenaux</button>
-        </div>--%>
+        </div>
         <input type="submit" name="submit" value="Ajouter">
     </form>
 </div>

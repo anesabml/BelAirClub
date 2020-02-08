@@ -3,13 +3,13 @@
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
-#pageTitle {
-    font-size: 25px;
-    color: white;
+.header {
     background-color: #4CAF50;
-    padding: 15px;
+    padding: 20px;
     width: 100%;
-    box-shadow: 1px 0 1px grey;
+    color: white;
+    text-align: center;
+    font-size: 25px;
 }
 
 #activite {

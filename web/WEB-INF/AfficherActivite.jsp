@@ -11,7 +11,7 @@
 <head>
     <title>AfficherActivite </title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stayle\tableStyle.css">
+    <link rel="stylesheet" type="text/css" href="style\tableStyle.css">
 </head>
 <body>
 <p class="titlepage">noter Activite</p>
@@ -32,20 +32,24 @@
 
 
                     <tr>
-                        <th>jour</th>
-                        <th>temp</th>
+                        <th>Jour</th>
+                        <th>Heure debut</th>
+                        <th>Heure fin</th>
                     </tr>
                     <c:forEach var="creneaux" items="${list.getCreneaux()}">
                         <tr>
                             <td><c:out value="${creneaux.getJour()}"></c:out></td>
-                            <td><c:out value="${creneaux.getHeureDebut()}-${creneaux.getHeureFin()}"></c:out></td>
+                            <td><c:out value="${creneaux.getHeureDebut()}"></c:out></td>
+                            <td><c:out value="${creneaux.getHeureFin()}"></c:out></td>
                         </tr>
                     </c:forEach>
                 </table>
 
             </tr>
         </table>
-        <button>reserver</button>
+        <a href="ReserverServlet">
+            <button> reserver</button>
+        </a>
     </div>
 </c:forEach>
 

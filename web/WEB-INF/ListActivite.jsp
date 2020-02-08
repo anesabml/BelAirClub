@@ -11,10 +11,12 @@
 <head>
     <title>List des activites</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stayle\listActivites.css">
+    <link rel="stylesheet" type="text/css" href="style\listActivites.css">
 </head>
 <body>
-<div id="pageTitle"><p>Notre Activites</p></div>
+<div class="header">
+    <h2>Notre Activites</h2>
+</div>
 <a href="AjouterActiviteServlet" id="addButton">
     Ajouter
 </a>

@@ -10,7 +10,7 @@
 <head>
     <title>activite libre</title>
 
-    <link rel="stylesheet" href="stayle\tableStyle.css">
+    <link rel="stylesheet" href="style\tableStyle.css">
     <meta charset="UTF-8">
 </head>
 <body>
@@ -36,13 +36,15 @@
 
                     <tr>
                         <th>jour</th>
-                        <th>temp</th>
+                        <th>Heure debut</th>
+                        <th>Heure fin</th>
                         <th>nombre de place reste</th>
                     </tr>
                     <c:forEach var="creneaux" items="${list.getCreneaux()}">
                         <tr>
                             <td><c:out value="${creneaux.getJour()}"></c:out></td>
-                            <td><c:out value="${creneaux.getHeure()}"></c:out></td>
+                            <td><c:out value="${creneaux.getHeureDebut()}"></c:out></td>
+                            <td><c:out value="${creneaux.getHeureFin()}"></c:out></td>
                             <c:choose><c:when test="${creneaux.getNbPlace()>0}">
                                 <td><c:out value="${creneaux.getNbPlace()}"></c:out></td>
                             </c:when>
@@ -58,7 +60,9 @@
 
             </tr>
         </table>
-        <a href="ReserverServlet"> <button > reserver</button></a>
+        <a href="ReserverServlet">
+            <button> reserver</button>
+        </a>
     </div>
 </c:forEach>
 

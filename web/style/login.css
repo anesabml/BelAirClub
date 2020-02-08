@@ -1,16 +1,11 @@
-body {
-    font-style: initial;
-    text-align: center;
+* {
     margin: 0;
-    padding: 0;
-    background: rgb(231, 230, 229);
-
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 form {
     background-color: #fff;
     border: none;
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,54 +30,34 @@ fieldset legend {
     font-size: 30px;
 }
 
-input {
-    border-radius: 2px;
-    background-color: white;
-
-    border: none;
-
-}
-
-input {
-    border-radius: 3%;
-
-}
 
 .pclass {
     padding: 2px;
 }
-input[type=email],input[type=text], input[type=password] {
-    border: 1px solid grey;
-    margin: 5px;
-    width: 90%;
-    height: 20px;
-    padding: 7px;
 
-}
-input[type=email]:focus,
-input[type=text]:focus,
-input[type=password]:focus {
-    box-shadow: 1px 1px 8px 3px grey;
-    padding: 2px;
-    width: 90%;
-    height: 20px;
-    padding: 7px;
-
+input[type=email], input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 input[type=submit] {
-    width: 50%;
-    padding: 3%;
-    margin-top: 2%;
-    font-size: 17px;
-    background-color: rgb(0, 193, 70);
-    font-size: 18px;
-    font-family: Comic Sans MS;
-
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 input[type=submit]:hover {
-    background-color: rgb(0, 210, 70);
+    background-color: #45a049;
     box-shadow: 1px 1px 2px 2px grey;
-
 }

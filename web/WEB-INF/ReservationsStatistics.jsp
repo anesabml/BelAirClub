@@ -10,9 +10,12 @@
 <head>
     <title>Statistiques des reservations</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style\statistics.css">
 </head>
 <body>
-<h1>Statistiques des reservations</h1>
+<div class="header">
+    <h2>Statistiques des reservations</h2>
+</div>
 <div id="chart" style="width:600px;height:250px;"></div>
 <script>
 
@@ -24,7 +27,7 @@
     var reservationsY = new Array();
 
     <c:forEach items="${sessionScope.reservationsByMonth}" var="item" varStatus="i">
-        reservationsY[${i.index}] = "${item}";
+    reservationsY[${i.index}] = "${item}";
     </c:forEach>
 
     reservationsCount.x = reservationsX;

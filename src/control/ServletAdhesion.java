@@ -7,6 +7,7 @@ import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -58,7 +59,6 @@ public class ServletAdhesion extends HttpServlet {
             while (it.hasNext()) {
                 FileItem fileItem = it.next();
                 String s = fileItem.getFieldName();
-                System.out.println(s);
                 if ("nom".equals(s)) {
                     m.setNom(fileItem.getString());
 
@@ -78,7 +78,6 @@ public class ServletAdhesion extends HttpServlet {
                     m.setEmail(fileItem.getString());
 
                 } else if ("photo".equals(s)) {
-                    System.out.println(fileItem.getName());
                     m.setPhoto(fileItem.getName());
                     file.add(fileItem);
 
@@ -115,13 +114,14 @@ public class ServletAdhesion extends HttpServlet {
                         }
                     }
                 }
-                out.println("iscription termine !");
+
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/LoginMembre.html");
+                dispatcher.forward(request, response);
             } else {
                 out.println("tu es deja un compte");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(e);
         }
 
     }

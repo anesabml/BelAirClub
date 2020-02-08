@@ -11,7 +11,7 @@
 <head>
     <title>List des member non active</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stayle\tableStyle.css">
+    <link rel="stylesheet" type="text/css" href="style\tableStyle.css">
 </head>
 <body>
 <p class="titlepage">Members</p>

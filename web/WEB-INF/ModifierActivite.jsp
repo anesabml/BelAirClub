@@ -11,7 +11,7 @@
 <head>
     <title>Modifer Activite</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stayle\modifierActivity.css">
+    <link rel="stylesheet" type="text/css" href="style\modifierActivity.css">
 </head>
 <body>
 <form method="POST" action="ModifierActiviteServlet?id=${sessionScope.activite.getCode()}">

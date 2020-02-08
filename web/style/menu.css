@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 100px;
+}
+
+/* Container for flexboxes */
+.rowContainer {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Create three equal columns that sits next to each other */
+.row {
+    background-color: #0090af;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+}
+
+.row:hover {
+    background-color: dimgray;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    margin-left: 50px;
+}

@@ -10,9 +10,12 @@
 <head>
     <title>Statistiques des inscriptions</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style\statistics.css">
 </head>
 <body>
-<h1>Statistiques des inscriptions</h1>
+<div class="header">
+    <h2>Statistiques des inscriptions</h2>
+</div>
 <div id="chart" style="width:600px;height:250px;"></div>
 <script>
 

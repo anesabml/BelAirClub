@@ -17,7 +17,7 @@ public class EspaceResponsableServlet extends HttpServlet {
 
         if ((session == null) || (session.getAttribute("user") == null)) {
 
-            dispatcher = request.getRequestDispatcher("/EspaceResponsable.html");
+            dispatcher = request.getRequestDispatcher("/AtentifResposable.html");
             dispatcher.forward(request, response);
 
         } else {

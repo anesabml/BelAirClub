@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Reservation {
     private int id;
-    private int code;
-    private Date dateDeReservation;
+    private String code;
+    private String date;
     private boolean confirme;
     private boolean annuler;
     private boolean enAttend;
@@ -20,20 +20,20 @@ public class Reservation {
         this.id = id;
     }
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
-    public Date getDateDeReservation() {
-        return dateDeReservation;
+    public String getDate() {
+        return date;
     }
 
-    public void setDateDeReservation(Date dateDeReservation) {
-        this.dateDeReservation = dateDeReservation;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public boolean isConfirme() {
